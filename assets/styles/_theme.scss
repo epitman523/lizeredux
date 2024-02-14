@@ -60,6 +60,7 @@ html {
             max-width: $bodyMaxWidth;
             margin: 0 auto;
             padding: 0 $containerPadding;
+
         }
 
         
@@ -106,5 +107,20 @@ a, button {
         &::before {
             background-color: $orange;
         }
+    }
+}
+
+header {
+    background-color: green;
+
+
+}
+
+h1 {
+    text-align: center;
+
+    span {
+        display: block;
+        font-size: 3.7rem;
     }
 }

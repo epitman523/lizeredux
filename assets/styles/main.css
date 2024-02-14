@@ -194,4 +194,16 @@ a.light::before, button.light::before {
   background-color: #ff9153;
 }
 
+header {
+  background-color: green;
+}
+
+h1 {
+  text-align: center;
+}
+h1 span {
+  display: block;
+  font-size: 3.7rem;
+}
+
 /*# sourceMappingURL=main.css.map */
