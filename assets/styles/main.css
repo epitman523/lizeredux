@@ -1,3 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Satisfy&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.h1 {
+  font-family: "Satisfy", cursive;
+  font-size: 8rem;
+}
+@media (min-width: 1025px) {
+  .h1 {
+    font-size: 12rem;
+  }
+}
+
+.h2 {
+  font-size: 4rem;
+  font-family: "Satisfy", cursive;
+}
+@media (min-width: 1025px) {
+  .h2 {
+    font-size: 8rem;
+  }
+}
+
+.h3 {
+  font-size: 3.2rem;
+  font-family: "Satisfy", cursive;
+}
+@media (min-width: 1025px) {
+  .h3 {
+    font-size: 5.4rem;
+  }
+}
+
+.h4 {
+  font-size: 2.5rem;
+}
+@media (min-width: 1025px) {
+  .h4 {
+    font-size: 3.6rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "DM Sans", sans-serif;
+  font-size: 62.5%;
+  font-weight: 500;
+}
+html body {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-weight: 200;
+  background: rgb(6, 24, 50);
+  background: linear-gradient(180deg, rgb(6, 24, 50) 0%, rgb(18, 35, 72) 27%, rgb(67, 53, 84) 56%, rgb(255, 85, 79) 96%, rgb(255, 145, 83) 100%);
+}
+html body header {
+  position: relative;
+  z-index: 10;
+}
+html body section {
+  padding: 60px 0;
+  position: relative;
+}
+@media (min-width: 1025px) {
+  html body section {
+    padding: 100px 0;
+  }
+}
+html body ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+html body a.dark {
+  transition: all 500ms ease-in-out 0s;
+  -moz-transition: all 500ms ease-in-out 0s;
+  -webkit-transition: all 500ms ease-in-out 0s;
+  -o-transition: all 500ms ease-in-out 0s;
+}
+html body a.light {
+  transition: all 500ms ease-in-out 0s;
+  -moz-transition: all 500ms ease-in-out 0s;
+  -webkit-transition: all 500ms ease-in-out 0s;
+  -o-transition: all 500ms ease-in-out 0s;
+}
+html body .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+html body .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
 
 /*# sourceMappingURL=main.css.map */
