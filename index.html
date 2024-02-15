@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elizabeth Emig's Portfolio Website</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul role="presentation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li>
-                    <a href="#work">Selected Work</a>
-                </li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu" role="presentation">
+                    <li><a class="light" href="index.html">Home</a></li>
+                    <li><a class="light" href="#about">About</a></li>
+                    <li>
+                        <a class="light" href="#work">Selected Work</a>
+                    </li>
+                    <li><a class="light" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main>
         <section id="intro">
-            <h1>Welcome to Elizabeth Emig's Portfolio Website</h1>
-            <p>My name is Elizabeth Emig and I am a web developer. I am passionate about web development and I am always looking for new projects to work on. I am skilled in HTML, CSS, JavaScript, and PHP. I am always looking to learn new things and expand my skill set. I am currently looking for job opportunities in the field of web development. Please feel free to contact me if you have any questions or would like to work with me.</p>
+            <div class="container">
+                <h1 class="h1">LizE <span>Web Developer</span></h1>
+                <h2 class="h2">Welcome</h2>
+                <p>My name is Elizabeth Emig and I am a web developer. I am passionate about web development and I am always looking for new projects to work on. I am skilled in HTML, CSS, JavaScript, and PHP. I am always looking to learn new things and expand my skill set. I am currently looking for job opportunities in the field of web development. Please feel free to contact me if you have any questions or would like to work with me.</p>
+            </div>
         </section>
         <section id="skills">
-                <h3>Skills</h3>
-                <h3>Languages</h3>
+            <div class="container">
+                <h2 class="h2">Skills</h2>
+                <h3 class="h3">Languages</h3>
                 <ul>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -34,14 +44,14 @@
                     <li>JavaScript ES6</li>
                     <li>PHP</li>
                 </ul>
-                <h3>Frameworks</h3>
+                <h3 class="h3">Frameworks</h3>
                 <ul>
                     <li>Bootstrap</li>
                     <li>Tailwind</li>
                     <li>jQuery</li>
                     <li>Node.js</li>
                 </ul>
-                <h3>Software / Applications</h3>
+                <h3 class="h3">Software / Applications</h3>
                 <ul>
                     <li>Adobe Photoshop</li>
                     <li>Adobe Illustrator</li>
@@ -64,26 +74,31 @@
                     <li>AWS CodeCommit</li>
                     <li>JIRA</li>
                 </ul>
+            </div>
         </section>
 
         <section id="work">
-            <h2>Work</h2>
-            <div id="projects">
-                <h3>Selected Work</h3>
-                <ul>
-                    <li><a href="obsidianworks.html">Obsidianworks</a></li>
-                    <li><a href="pennathletics.html">Power the Next 100</a></li>
-                    <li><a href="congaree.html">Congaree Foundation</a></li>
-                </ul>
+            <div class="container">
+                <h2 class="h2">Selected Work</h2>
+                <div id="projects">
+                    <ul>
+                        <li><a href="obsidianworks.html">Obsidianworks</a></li>
+                        <li><a href="pennathletics.html">Power the Next 100</a></li>
+                        <li><a href="congaree.html">Congaree Foundation</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section id="contact">
-            <h2>Contact</h2>
-            <ul>
-                <li>Email: <a href="mailto:#"></a></li>
-                <li>LinkedIn: <a href="#"></a></li>
-                <li>GitHub: <a href="#"></a></li>
-            </ul>
+            <div class="container">
+                <h2>Contact</h2>
+                <ul>
+                    <li>Email: <a href="mailto:#"></a></li>
+                    <li>LinkedIn: <a href="#"></a></li>
+                    <li>GitHub: <a href="#"></a></li>
+                </ul>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Elizabeth Emig</p>
