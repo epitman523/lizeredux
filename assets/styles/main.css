@@ -109,10 +109,9 @@ html body {
   letter-spacing: 0.5px;
   font-weight: 200;
   overflow: auto;
-}
-html body header {
-  position: relative;
-  z-index: 10;
+  overflow-x: hidden header;
+  overflow-x-position: relative;
+  overflow-x-z-index: 10;
 }
 html body section {
   padding: 60px 0;
@@ -127,6 +126,8 @@ html body ul {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 html body a.dark {
   transition: all 500ms ease-in-out 0s;
@@ -154,6 +155,14 @@ html body .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
+}
+
+h1 {
+  text-align: center;
+}
+h1 span {
+  display: block;
+  font-size: 3.7rem;
 }
 
 a, button {
@@ -191,31 +200,30 @@ a.light, button.light {
   color: #fcfbf7;
 }
 a.light::before, button.light::before {
-  background: linear-gradient(180deg, rgb(255, 145, 83) 60%, rgb(255, 85, 79) 100%);
+  background: rgb(255, 145, 83);
+  background: linear-gradient(180deg, rgb(255, 145, 83) 0%, rgb(255, 85, 79) 100%);
 }
 
-header #menuToggle {
-  position: relative;
+#menuToggle {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
   top: 25px;
   left: 25px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
 }
-header #menuToggle input {
+#menuToggle input {
   display: flex;
   width: 40px;
   height: 32px;
-  position: fixed;
+  position: absolute;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
-  transition: all 500ms ease-in-out 0s;
-  -moz-transition: all 500ms ease-in-out 0s;
-  -webkit-transition: all 500ms ease-in-out 0s;
-  -o-transition: all 500ms ease-in-out 0s;
 }
-header #menuToggle span {
+#menuToggle span {
   display: flex;
   width: 29px;
   height: 2px;
@@ -227,51 +235,172 @@ header #menuToggle span {
   transform-origin: 5px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
-header #menuToggle span:first-child {
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
-header #menuToggle span:nth-last-child(2) {
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
-header #menuToggle input:checked ~ span {
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-3px, -1px);
-  background: #36383F;
+  background: #fcfbf7;
 }
-header #menuToggle input:checked ~ span:nth-last-child(3) {
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
-header #menuToggle input:checked ~ span:nth-last-child(2) {
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
-header #menu {
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#menu {
   position: fixed;
-  height: 100vh;
+  width: 75%;
+  height: 100%;
   box-shadow: 0 0 10px #061832;
-  margin: -50px 0 0 -50px;
+  margin: -25px 0 0 -25px;
   padding: 50px;
   padding-top: 125px;
-  background-color: #061832;
+  background-color: #523853;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  flex-direction: column;
 }
-header #menu li {
+#menu li {
   padding: 10px 0;
   transition-delay: 2s;
+  font-size: 2.75rem;
 }
-header #menuToggle input:checked ~ ul {
-  transform: none;
+@media (min-width: 769px) {
+  #menu li {
+    font-size: 3.5rem;
+  }
 }
 
-h1 {
+#intro .container div:first-child {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
 }
-h1 span {
+#intro .container div:first-child span {
+  border-top: 2px solid #ff9153;
+  padding-top: 20px;
+}
+#intro .container div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1025px) {
+  #intro .container div:last-child {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #intro .container div:last-child h2 {
+    width: 25%;
+  }
+  #intro .container div:last-child P {
+    margin-left: 30px;
+  }
+}
+#intro .container div:last-child h2 {
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+#intro .container div:last-child p {
+  border-left: 2px solid #ff9153;
+  padding-left: 30px;
+}
+
+#skills .container h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+#skills .container h3 {
+  margin-bottom: 5px;
+}
+#skills .container > div {
+  margin-bottom: 60px;
+}
+#skills .container .languages ul {
+  flex-direction: column;
+}
+#skills .container .languages ul li {
+  margin-bottom: 15px;
+}
+#skills .container .languages ul li p {
+  margin-bottom: 5px;
+}
+#skills .container .languages ul li .bar {
   display: block;
-  font-size: 3.7rem;
+  width: 100%;
+  height: 10px;
+  border: rgba(252, 251, 247, 0.2) 2px solid;
+  background-color: transparent;
+  border-radius: 5px;
+}
+#skills .container .languages ul li .bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0;
+  background-color: #ff9153;
+  border-radius: 5px;
+}
+#skills .container .languages ul li:first-child .bar::after, #skills .container .languages ul li:nth-child(2) .bar::after, #skills .container .languages ul li:nth-child(3) .bar::after {
+  width: 100%;
+}
+#skills .container .languages ul li:nth-child(4) .bar::after {
+  width: 75%;
+}
+#skills .container .languages ul li:nth-child(5) .bar::after {
+  width: 50%;
+}
+#skills .container .frameworks ul li {
+  width: 50%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#skills .container .frameworks ul li::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #ff9153;
+  border-radius: 50%;
+  margin-left: -30px;
+  margin-right: 15px;
+}
+#skills .container .software {
+  background-color: rgba(6, 24, 50, 0.25);
+  padding: 15px;
+  margin: -15px;
+}
+#skills .container .software h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+#skills .container .software ul {
+  flex-direction: column;
+  border-left: 2px solid #ff9153;
+  padding-left: 30px;
+  margin-bottom: 45px;
+}
+footer {
+  background-color: #061832;
 }
 
 /*# sourceMappingURL=main.css.map */
