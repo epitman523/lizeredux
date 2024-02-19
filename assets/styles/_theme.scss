@@ -222,7 +222,50 @@ a, button {
     padding-top: 0;
 
     .container {
-        div:first-child {
+        .svg-container {
+            display: block;
+            width: 102px;
+            height: 102px;
+            margin-bottom: 30px;
+            position: absolute;
+            top: 15%;
+            // background-color: rgba(252, 251, 247, 0.3);
+            // border-radius: 50%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 1px;
+                left: 6px;
+                width: 100%;
+                height: 100%;
+                background-color: $white;
+                opacity: 0.25;
+                border-radius: 50%;
+                transition: all 0.5s ease-in-out;
+                filter: blur(30px);
+                z-index: -1;
+            }
+            &:hover {
+                &::before {
+                    opacity: 0.5;
+                    filter: blur(40px);
+                }
+            }
+            
+
+            @include media('>tablet') {
+                width: 150px;
+                height: 150px;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: $yellow;
+            }
+        }
+        div:nth-child(2) {
             padding: 0;
             margin: 0;
             display: flex;
@@ -307,8 +350,6 @@ a, button {
                             background: $gradient-op;
                             border-radius: 5px;
                         }
-
-                        
                     }
                     //HTML
                     &:first-child .bar::after,
@@ -387,6 +428,7 @@ a, button {
                 width: 100%;
             }
             @include media('>tablet') {
+                // background-color: transparent;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -411,10 +453,6 @@ a, button {
                 border-left: 2px solid $orange;
                 padding-left: 30px;
                 margin-bottom: 45px;
-
-                li {
-
-                }
             }
         }
     }
@@ -513,56 +551,171 @@ a, button {
     }
 }
 #contact {
+    padding-bottom: 300px;
     .container {
         h2 {
             color: $darkNavy;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
         }
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
 
-        @include media('>tablet') {
+        ul {
             display: flex;
-            flex-direction: row-reverse;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
-            margin-bottom: 200px;
+
+            li {
+                width: 33.33333%;
+
+                a {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: center;
+                    align-items: center;
+                    color: $darkNavy;
+                    font-size: 2.2rem;
+                    font-weight: 500;
+                    text-align: center;
+                    padding: 10px 0;
+                }
+
+                .svg-container {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    margin-bottom: 15px;
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                        fill: $white;
+                    }
+                }
+                
+            }
+        }
+        
+        @include media('>tablet') {
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
 
             h2, ul {
                 width: calc(50% - 15px);
             }
             h2 {
-                margin-left: 30px;
+                margin-left: 60px;
+                text-align: left;
             }
             ul {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: flex-end;
                 align-items: center;
-                padding: 15px 30px 15px 0;
+                padding: 15px 60px 15px 0;
                 border-right: 2px solid $yellow;
 
                 li {
                     display: flex;
                     flex-direction: row;
-                    margin-left: 15px;
-                    
-                    
+                    justify-content: flex-end;
+                    margin-bottom: 15px;
+                    width: 100%;
 
                     a {
-                        display: block;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: flex-end;
+                        align-items: center;
                         margin-left: 10px;
                         color: $darkNavy;
-                        font-size: 2.7rem;
+                        font-size: 2.4rem;
                         font-weight: 500;
                     }
 
-                    svg {
+                    .svg-container {
+                        display: block;
                         width: 30px;
                         height: 30px;
-                        fill: $white;
-                        margin-bottom: -5px;
+                        margin-left: 15px;
+                        margin-bottom: 0;
                     }
                 }
             }
         }
+        @include media('>desktop') {
+            padding-bottom: 400px;
+        }
+    }
+    .skyline {
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        max-height: 100px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .svg-container {
+            display: block;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: $darkNavy;
+            }
+        }
+        #trees-1 {
+            width: 20%;
+            display: none;
+            svg {
+                fill: $purple;
+            }
+
+            @include media('>tablet') {
+                display: block;
+            }
+        }
+        #big-tree-1 {
+            width: 30%;
+            z-index: 2;
+        }
+        #house-1 {
+            width: 25%;
+            margin-left: -5%;
+            z-index: 1;
+            svg {
+                fill: $navy;
+            
+            }
+        }
+        #round-tree-1 {
+            width: 30%;
+            svg {
+                fill: $darkNavy;
+            }
+        }
+        #sm-plant-1 {
+            width: 3%;
+
+            svg {
+                fill: $navy;
+            }
+        }
+        #sm-plant-2 {
+            width: 5%;
+
+            svg {
+                fill: $navy;
+            }
+        }
+
     }
 }
 
@@ -570,4 +723,6 @@ footer {
     background-color: $darkNavy;
     padding: 15px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
