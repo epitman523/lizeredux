@@ -9,6 +9,9 @@ $orange: #ff9153;
 $yellow: #ffdf71;
 $white: #fcfbf7;
 
+// Gradients
+$gradient-op: linear-gradient(90deg, #ff9153 0%, #ff554f 100%);
+
 // Typography
 $bodyFontSize: 1.8rem;
 $bodyLineHeight: 1.5;
@@ -20,5 +23,5 @@ $bodyMaxWidth: 1200px;
 $containerPadding: 30px;
 
 //Section
-$sectionPadding: 60px;
-$sectionPaddingD: 100px;
+$sectionPadding: 100px;
+$sectionPaddingD: 150px;

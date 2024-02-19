@@ -110,7 +110,7 @@ a, button {
         color: $navy;
 
         &::before {
-            background-color: $navy;
+            background-color: $yellow;
         }
     }
     &.light {
@@ -181,7 +181,6 @@ a, button {
         transform: none;
     }
 }
-  
 #menu {
     // position: absolute;
     position: fixed;
@@ -198,6 +197,14 @@ a, button {
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     flex-direction : column;
 
+    @include media('>tablet') {
+        width: 50%;
+    }
+    @include media('>desktop') {
+        width: 25%;
+                            
+    }
+
     li {
         padding: 10px 0;
         transition-delay: 2s;
@@ -209,7 +216,11 @@ a, button {
         }
     }
 }
+
+//Sections
 #intro {
+    padding-top: 0;
+
     .container {
         div:first-child {
             padding: 0;
@@ -221,7 +232,7 @@ a, button {
             height: 100vh;
             text-align: center;
             span {
-                border-top: 2px solid $orange;
+                border-top: 2px solid $pink;
                 padding-top: 20px;
             }
         }
@@ -292,7 +303,8 @@ a, button {
                             display: block;
                             height: 100%;
                             width: 0;
-                            background-color: $orange;
+                            background: $orange;
+                            background: $gradient-op;
                             border-radius: 5px;
                         }
 
@@ -321,20 +333,36 @@ a, button {
             ul {
                 li {
                     width: 50%;
-                    padding-left: 30px;
                     display: flex;
-                    flex-direction: row;
-                    align-items: center;;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 30px;
+
+                    @include media('>desktop') {
+                        width: 25%;
+                        padding-left: 30px;
+                        
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                    }
     
-                    &::before {
-                        content: '';
+                    .svg-container {
                         display: block;
-                        width: 5px;
-                        height: 5px;
-                        background-color: $orange;
-                        border-radius: 50%;
-                        margin-left: -30px;
-                        margin-right: 15px;
+                        width: 50px;
+                        height: 50px;
+                        margin-bottom: 15px;
+
+                        @include media('>tablet') {
+                            width: 75px;
+                            height: 75px;
+                        }
+
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                            fill: $yellow;
+                        }
                     }
                 }
             }
@@ -391,7 +419,6 @@ a, button {
         }
     }
 }
-
 #work {
     .container {
         h2 {
@@ -452,6 +479,22 @@ a, button {
                     opacity: 0;
                     line-height: 0;
                     transition: all 0.5s ease-in-out;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    span {
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        margin-left: 10px;
+
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                            fill: $orange;
+                        }
+                    }
                 }
                 &:hover {
                     background-color: rgba(6, 24, 50, 0.5);
@@ -459,8 +502,8 @@ a, button {
                     p {
                         color: $orange;
                         opacity:1;
-                        line-height: 1;
-                    }
+                        height: 15px;
+                    }   
                 }
                 &::before {
                     display: none;
@@ -469,7 +512,62 @@ a, button {
         }
     }
 }
+#contact {
+    .container {
+        h2 {
+            color: $darkNavy;
+        }
+
+        @include media('>tablet') {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 200px;
+
+            h2, ul {
+                width: calc(50% - 15px);
+            }
+            h2 {
+                margin-left: 30px;
+            }
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 15px 30px 15px 0;
+                border-right: 2px solid $yellow;
+
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 15px;
+                    
+                    
+
+                    a {
+                        display: block;
+                        margin-left: 10px;
+                        color: $darkNavy;
+                        font-size: 2.7rem;
+                        font-weight: 500;
+                    }
+
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        fill: $white;
+                        margin-bottom: -5px;
+                    }
+                }
+            }
+        }
+    }
+}
 
 footer {
     background-color: $darkNavy;
+    padding: 15px;
+    text-align: center;
 }

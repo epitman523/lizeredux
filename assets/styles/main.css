@@ -84,11 +84,11 @@ table {
 }
 
 .h4 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 @media (min-width: 1025px) {
   .h4 {
-    font-size: 3.6rem;
+    font-size: 3rem;
   }
 }
 
@@ -114,12 +114,12 @@ html body {
   overflow-x-z-index: 10;
 }
 html body section {
-  padding: 60px 0;
+  padding: 100px 0;
   position: relative;
 }
 @media (min-width: 1025px) {
   html body section {
-    padding: 100px 0;
+    padding: 150px 0;
   }
 }
 html body ul {
@@ -194,7 +194,7 @@ a.dark, button.dark {
   color: #122348;
 }
 a.dark::before, button.dark::before {
-  background-color: #122348;
+  background-color: #ffdf71;
 }
 a.light, button.light {
   color: #fcfbf7;
@@ -272,6 +272,16 @@ a.light::before, button.light::before {
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   flex-direction: column;
 }
+@media (min-width: 769px) {
+  #menu {
+    width: 50%;
+  }
+}
+@media (min-width: 1025px) {
+  #menu {
+    width: 25%;
+  }
+}
 #menu li {
   padding: 10px 0;
   transition-delay: 2s;
@@ -283,6 +293,9 @@ a.light::before, button.light::before {
   }
 }
 
+#intro {
+  padding-top: 0;
+}
 #intro .container div:first-child {
   padding: 0;
   margin: 0;
@@ -294,7 +307,7 @@ a.light::before, button.light::before {
   text-align: center;
 }
 #intro .container div:first-child span {
-  border-top: 2px solid #ff9153;
+  border-top: 2px solid #ff554f;
   padding-top: 20px;
 }
 #intro .container div:last-child {
@@ -356,7 +369,8 @@ a.light::before, button.light::before {
   display: block;
   height: 100%;
   width: 0;
-  background-color: #ff9153;
+  background: #ff9153;
+  background: linear-gradient(90deg, #ff9153 0%, #ff554f 100%);
   border-radius: 5px;
 }
 #skills .container .languages ul li:first-child .bar::after, #skills .container .languages ul li:nth-child(2) .bar::after, #skills .container .languages ul li:nth-child(3) .bar::after {
@@ -370,20 +384,36 @@ a.light::before, button.light::before {
 }
 #skills .container .frameworks ul li {
   width: 50%;
-  padding-left: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
 }
-#skills .container .frameworks ul li::before {
-  content: "";
+@media (min-width: 1025px) {
+  #skills .container .frameworks ul li {
+    width: 25%;
+    padding-left: 30px;
+  }
+  #skills .container .frameworks ul li:first-child {
+    padding-left: 0;
+  }
+}
+#skills .container .frameworks ul li .svg-container {
   display: block;
-  width: 5px;
-  height: 5px;
-  background-color: #ff9153;
-  border-radius: 50%;
-  margin-left: -30px;
-  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+@media (min-width: 769px) {
+  #skills .container .frameworks ul li .svg-container {
+    width: 75px;
+    height: 75px;
+  }
+}
+#skills .container .frameworks ul li .svg-container svg {
+  width: 100%;
+  height: 100%;
+  fill: #ffdf71;
 }
 @media (min-width: 769px) {
   #skills .container {
@@ -491,6 +521,20 @@ a.light::before, button.light::before {
   opacity: 0;
   line-height: 0;
   transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#work .container #projects a p span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+}
+#work .container #projects a p span svg {
+  width: 100%;
+  height: 100%;
+  fill: #ff9153;
 }
 #work .container #projects a:hover {
   background-color: rgba(6, 24, 50, 0.5);
@@ -498,14 +542,61 @@ a.light::before, button.light::before {
 #work .container #projects a:hover p {
   color: #ff9153;
   opacity: 1;
-  line-height: 1;
+  height: 15px;
 }
 #work .container #projects a::before {
   display: none;
 }
 
+#contact .container h2 {
+  color: #061832;
+}
+@media (min-width: 769px) {
+  #contact .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+  #contact .container h2, #contact .container ul {
+    width: calc(50% - 15px);
+  }
+  #contact .container h2 {
+    margin-left: 30px;
+  }
+  #contact .container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 30px 15px 0;
+    border-right: 2px solid #ffdf71;
+  }
+  #contact .container ul li {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+  }
+  #contact .container ul li a {
+    display: block;
+    margin-left: 10px;
+    color: #061832;
+    font-size: 2.7rem;
+    font-weight: 500;
+  }
+  #contact .container ul li svg {
+    width: 30px;
+    height: 30px;
+    fill: #fcfbf7;
+    margin-bottom: -5px;
+  }
+}
+
 footer {
   background-color: #061832;
+  padding: 15px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
