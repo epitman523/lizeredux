@@ -474,10 +474,21 @@ a, button {
             li {
                 width: 100%;
 
+                &:first-child a {
+                    background-image: url('../images/obsidianDetail_1.png');
+                }
+                &:nth-child(2) a {
+                    background-image: url('../images/upennDetail_2.png');
+                }
+                &:nth-child(3) a {
+                    background-image: url('../images/congareeDetail_2.png');
+                }
+
                 @include media('>tablet') {
                     width: calc(50% - 30px);
                 }
             }
+            
 
             @include media('>tablet') {
                 flex-direction: row;
@@ -492,7 +503,7 @@ a, button {
                 li {
                     width: calc(33.33333333% - 15px);
                 }
-            }   
+            }  
 
             a {
                 display: flex;
@@ -503,23 +514,70 @@ a, button {
                 height: 275px;
                 margin-bottom: 30px;
                 padding: 30px;
-                background-color: $darkNavy;
+                position: relative;
                 border-radius: 15px;
-                text-align: center;
-                transition: all 0.5s ease-in-out;
                 color: $white;
+                background-size: cover;
+                background-position: center;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(6, 24, 50, 0.75);
+                    border-radius: 15px;
+                    transition: all 0.5s ease-in-out;
+                    z-index: 0;
+                }
                 
                 h3 {
                     font-weight: 300;
-                    margin-bottom: 15px;
-                }
-                p {
-                    opacity: 0;
-                    line-height: 0;
+                    line-height: 1;
+                    margin-top: 90px;
+                    margin-bottom: 20px;
                     transition: all 0.5s ease-in-out;
+                    position: relative;
+                    z-index: 1;
+                }
+                div {
+                    opacity: 0;
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    margin-top: 0;
+                    transition: all 0.5s ease-in-out;
+                    position: relative;
+                    z-index: 1;
+                    padding-top: 15px;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        background-color: $yellow;
+                        top: 0;
+                        left: 50%;
+                        right: 50%;
+                        transition: all 0.5s ease-in-out;
+                    }
+
+                    p {
+                        margin-bottom: 10px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                            color: $orange;
+                        }
+                    }
 
                     span {
                         display: inline-block;
@@ -535,12 +593,23 @@ a, button {
                     }
                 }
                 &:hover {
-                    background-color: rgba(6, 24, 50, 0.5);
+                    &::after {
+                        background-color: rgba(6, 24, 50, 0.9);
+                    }
 
-                    p {
-                        color: $orange;
+                    h3 {
+                        margin-top: 0;
+                    }
+
+                    div {
+                        margin-top: 15px;
                         opacity:1;
-                        height: 15px;
+
+                        &::before {
+                            width: 100%;
+                            left: 0;
+                            right: 0;
+                        }
                     }   
                 }
                 &::before {
@@ -548,7 +617,7 @@ a, button {
                 }
             }
         }
-    }
+    }   
 }
 #contact {
     padding-bottom: 300px;

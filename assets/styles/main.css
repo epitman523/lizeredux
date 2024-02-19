@@ -516,6 +516,15 @@ a.light::before, button.light::before {
 #work .container #projects li {
   width: 100%;
 }
+#work .container #projects li:first-child a {
+  background-image: url("../images/obsidianDetail_1.png");
+}
+#work .container #projects li:nth-child(2) a {
+  background-image: url("../images/upennDetail_2.png");
+}
+#work .container #projects li:nth-child(3) a {
+  background-image: url("../images/congareeDetail_2.png");
+}
 @media (min-width: 769px) {
   #work .container #projects li {
     width: calc(50% - 30px);
@@ -545,42 +554,92 @@ a.light::before, button.light::before {
   height: 275px;
   margin-bottom: 30px;
   padding: 30px;
-  background-color: #061832;
+  position: relative;
   border-radius: 15px;
-  text-align: center;
-  transition: all 0.5s ease-in-out;
   color: #fcfbf7;
+  background-size: cover;
+  background-position: center;
+}
+#work .container #projects a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 24, 50, 0.75);
+  border-radius: 15px;
+  transition: all 0.5s ease-in-out;
+  z-index: 0;
 }
 #work .container #projects a h3 {
   font-weight: 300;
-  margin-bottom: 15px;
-}
-#work .container #projects a p {
-  opacity: 0;
-  line-height: 0;
+  line-height: 1;
+  margin-top: 90px;
+  margin-bottom: 20px;
   transition: all 0.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+#work .container #projects a div {
+  opacity: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 0;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+  padding-top: 15px;
 }
-#work .container #projects a p span {
+#work .container #projects a div::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ffdf71;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  transition: all 0.5s ease-in-out;
+}
+#work .container #projects a div p {
+  margin-bottom: 10px;
+}
+#work .container #projects a div p:last-child {
+  margin-bottom: 0;
+  color: #ff9153;
+}
+#work .container #projects a div span {
   display: inline-block;
   width: 15px;
   height: 15px;
   margin-left: 10px;
 }
-#work .container #projects a p span svg {
+#work .container #projects a div span svg {
   width: 100%;
   height: 100%;
   fill: #ff9153;
 }
-#work .container #projects a:hover {
-  background-color: rgba(6, 24, 50, 0.5);
+#work .container #projects a:hover::after {
+  background-color: rgba(6, 24, 50, 0.9);
 }
-#work .container #projects a:hover p {
-  color: #ff9153;
+#work .container #projects a:hover h3 {
+  margin-top: 0;
+}
+#work .container #projects a:hover div {
+  margin-top: 15px;
   opacity: 1;
-  height: 15px;
+}
+#work .container #projects a:hover div::before {
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 #work .container #projects a::before {
   display: none;
