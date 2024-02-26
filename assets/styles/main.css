@@ -296,7 +296,7 @@ a.light::before, button.light::before {
 #intro {
   padding-top: 0;
 }
-#intro .container .svg-container {
+#intro .container #moon {
   display: block;
   width: 102px;
   height: 102px;
@@ -304,7 +304,7 @@ a.light::before, button.light::before {
   position: absolute;
   top: 15%;
 }
-#intro .container .svg-container::before {
+#intro .container #moon::before {
   content: "";
   position: absolute;
   top: 1px;
@@ -318,22 +318,96 @@ a.light::before, button.light::before {
   filter: blur(30px);
   z-index: -1;
 }
-#intro .container .svg-container:hover::before {
+#intro .container #moon:hover::before {
   opacity: 0.5;
   filter: blur(40px);
 }
 @media (min-width: 769px) {
-  #intro .container .svg-container {
+  #intro .container #moon {
     width: 150px;
     height: 150px;
   }
 }
-#intro .container .svg-container svg {
+#intro .container #moon svg {
   width: 100%;
   height: 100%;
   fill: #ffdf71;
 }
-#intro .container div:nth-child(2) {
+#intro .container #star1, #intro .container #star2, #intro .container #star3 {
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+#intro .container #star1 svg, #intro .container #star2 svg, #intro .container #star3 svg {
+  width: 100%;
+  height: 100%;
+  fill: #ffdf71;
+}
+#intro .container #star1::before, #intro .container #star2::before, #intro .container #star3::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 12px;
+  height: 12px;
+  background-color: #fcfbf7;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  filter: blur(5px);
+}
+#intro .container #star4, #intro .container #star5, #intro .container #star6 {
+  display: block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+#intro .container #star4 svg, #intro .container #star5 svg, #intro .container #star6 svg {
+  width: 100%;
+  height: 100%;
+  fill: #ffdf71;
+}
+#intro .container #star4::before, #intro .container #star5::before, #intro .container #star6::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  width: 6px;
+  height: 6px;
+  background-color: #fcfbf7;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  filter: blur(3px);
+}
+#intro .container #star1 {
+  top: 10%;
+  left: 10%;
+}
+#intro .container #star2 {
+  top: 30%;
+  right: 20%;
+}
+#intro .container #star3 {
+  top: 50%;
+  left: 15%;
+}
+#intro .container #star4 {
+  top: 15%;
+  right: 30%;
+}
+#intro .container #star5 {
+  top: 90%;
+  left: 20%;
+}
+#intro .container #star6 {
+  top: 55%;
+  right: 30%;
+}
+#intro .container #title {
   padding: 0;
   margin: 0;
   display: flex;
@@ -343,32 +417,32 @@ a.light::before, button.light::before {
   height: 100vh;
   text-align: center;
 }
-#intro .container div:nth-child(2) span {
+#intro .container #title span {
   border-top: 2px solid #ff554f;
   padding-top: 20px;
 }
-#intro .container div:last-child {
+#intro .container #introText {
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 1025px) {
-  #intro .container div:last-child {
+  #intro .container #introText {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-  #intro .container div:last-child h2 {
+  #intro .container #introText h2 {
     width: 25%;
   }
-  #intro .container div:last-child P {
+  #intro .container #introText P {
     margin-left: 30px;
   }
 }
-#intro .container div:last-child h2 {
+#intro .container #introText h2 {
   margin-right: 15px;
   margin-bottom: 20px;
 }
-#intro .container div:last-child p {
+#intro .container #introText p {
   border-left: 2px solid #ff9153;
   padding-left: 30px;
 }
