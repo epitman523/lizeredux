@@ -397,7 +397,7 @@ a.light::before, button.light::before {
 }
 #intro .container #star4 {
   top: 15%;
-  right: 30%;
+  right: 50%;
 }
 #intro .container #star5 {
   top: 90%;
@@ -447,6 +447,83 @@ a.light::before, button.light::before {
   padding-left: 30px;
 }
 
+#skills .container #star7, #skills .container #star8, #skills .container #star9 {
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+#skills .container #star7 svg, #skills .container #star8 svg, #skills .container #star9 svg {
+  width: 100%;
+  height: 100%;
+  fill: #ffdf71;
+}
+#skills .container #star7::before, #skills .container #star8::before, #skills .container #star9::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 12px;
+  height: 12px;
+  background-color: #fcfbf7;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  filter: blur(5px);
+}
+#skills .container #star10, #skills .container #star11, #skills .container #star12 {
+  display: block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+#skills .container #star10 svg, #skills .container #star11 svg, #skills .container #star12 svg {
+  width: 100%;
+  height: 100%;
+  fill: #ffdf71;
+}
+#skills .container #star10::before, #skills .container #star11::before, #skills .container #star12::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  width: 6px;
+  height: 6px;
+  background-color: #fcfbf7;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  filter: blur(3px);
+}
+#skills .container #star7 {
+  top: 10%;
+  left: 30%;
+}
+#skills .container #star8 {
+  top: 40%;
+  right: 10%;
+}
+#skills .container #star9 {
+  top: 70%;
+  left: 15%;
+}
+#skills .container #star10 {
+  top: 20%;
+  right: 30%;
+  opacity: 0.75;
+}
+#skills .container #star11 {
+  bottom: 0;
+  left: 20%;
+  opacity: 0.3;
+}
+#skills .container #star12 {
+  bottom: 20%;
+  right: 15%;
+  opacity: 0.5;
+}
 #skills .container h2 {
   text-align: center;
   margin-bottom: 50px;
