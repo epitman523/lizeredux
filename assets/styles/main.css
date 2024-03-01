@@ -448,6 +448,11 @@ a.light::before, button.light::before {
   border-left: 2px solid #ff9153;
   padding-left: 30px;
 }
+@media (min-width: 1025px) {
+  #intro .container #sidenote {
+    margin-left: 32%;
+  }
+}
 
 #skills .container #star7, #skills .container #star8, #skills .container #star9 {
   display: block;

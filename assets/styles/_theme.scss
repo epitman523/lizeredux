@@ -389,6 +389,11 @@ a, button {
             }
 
         }
+        #sidenote {
+           @include media('>desktop') {
+                margin-left: 32%;
+           }
+        }
     }
 }
 #skills {
